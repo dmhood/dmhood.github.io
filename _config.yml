@@ -9,7 +9,7 @@ highlighter: true
 # so be sure to set them if your theme uses them.
 #
 title : Full-Stack Forge
-tagline: tbd...
+tagline:
 author :
   name : Daniel Hood
   email : dmhood@gmail.com
@@ -25,7 +25,7 @@ author :
 # Else if you are pushing to username.github.io, replace with your username.
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
-production_url : http://dmhood.github.io
+production_url : http://fullstackforge.com
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
@@ -101,6 +101,13 @@ JB :
     provider : google
     google :
         tracking_id : 'UA-53686334-1'
+    getclicky :
+      site_id :
+    mixpanel :
+        token : '_MIXPANEL_TOKEN_'
+    piwik :
+        baseURL : 'myserver.tld/piwik' # Piwik installation address (without protocol)
+        idsite : '1'
 
   # Settings for sharing helper.
   # Sharing is for things like tweet, plusone, like, reddit buttons etc.

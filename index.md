@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Full-Stack Forge
-tagline:
 ---
 {% include JB/setup %}
 
