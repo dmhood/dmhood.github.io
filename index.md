@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Full-Stack Forge
+title: Full-Stack Forum
 ---
 {% include JB/setup %}
 
