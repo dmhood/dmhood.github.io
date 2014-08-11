@@ -5,7 +5,9 @@ title: Full-Stack Forge
 {% include JB/setup %}
 
 <div class="blog-index">  
-  {% assign post = site.posts.first %}
-  {% assign content = post.content %}
-  {% include post_detail.html %}
+  {% for page in site.posts %}
+    {% assign page = page %}
+    {% assign content = page.content %}
+    {% include post_detail.html %}
+  {% endfor %}
 </div>

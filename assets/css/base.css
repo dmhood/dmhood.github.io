@@ -1,4 +1,21 @@
+
 .imageBlock {
   text-align: center;
   margin-bottom: 10px;
+}
+
+.imageBlock .caption {
+  font-size: 0.7rem;
+}
+
+.postDate {
+  color: #9EABB3;
+  font-size: 1.0rem;
+}
+.pagination {
+  display: inline;
+}
+.post-sharing {
+  display: inline;
+  float: right;
 }

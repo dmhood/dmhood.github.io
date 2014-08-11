@@ -1,6 +1,5 @@
-<h1 class="entry-title">
-{% if post.title %}
-    <a href="{{ root_url }}{{ post.url }}">{{ post.title }}</a>
-{% endif %}
-</h1>
-<div class="entry-content">{{ content }}</div>
+<div class="row">
+  <div class="span14">
+    {% include themes/twitter/post.html %}
+  </div>
+</div>

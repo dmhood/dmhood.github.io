@@ -1,4 +1,19 @@
 # This is the default format.
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+  # -
+  #   scope:
+  #     path: "projects"
+  #     type: "page"
+  #   values:
+  #     layout: "project" # overrides previous default layout
+  #     author: "Mr. Hyde"
+  #     category: "project"
+
 # For more see: http://jekyllrb.com/docs/permalinks/
 permalink: /:categories/:year/:month/:day/:title
 
@@ -109,13 +124,31 @@ JB :
         baseURL : 'myserver.tld/piwik' # Piwik installation address (without protocol)
         idsite : '1'
 
-  # Settings for sharing helper.
-  # Sharing is for things like tweet, plusone, like, reddit buttons etc.
+# Settings for sharing
+  # Sharing is for things like tweet, plusone, hn upvotes, like, linkedin
+  # Add a tweet button 		=> provider : tweet
+  # Add a like button 		=> provider : like (you also need a facebook appid)
+  # Add a plus one button 	=> provider : plusone
+  # Add a HN button 		=> provider : hn
+  # Add them all (i.e. hn + tweet + plusone + like) => provider : all
   # Set 'provider' to the sharing provider you want to use.
   # Set 'provider' to false to turn sharing off globally.
   #
   sharing :
-    provider : false
+    provider : all
+    twitter :
+      size : 90
+      via :
+      count :
+    facebook :
+      faces : false
+      width : 90
+    googleplus :
+      size : medium
+      width :
+      annotation : bubble
+    linkedin :
+      counter : right
 
   # Settings for all other include helpers can be defined by creating
   # a hash with key named for the given helper. ex:
