@@ -20,3 +20,7 @@
   float: right;
   margin-top: 15px;
 }
+
+.detail.post-sharing {
+  margin-top: 0;
+}
