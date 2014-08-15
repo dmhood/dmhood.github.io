@@ -1,0 +1,37 @@
+<div class="post">
+  <h1 class="post-title">{{ page.title }}</h1>
+  <span class="post-date">{{ page.date | date_to_string }}</span>
+  {{ content }}
+</div>
+
+<div class="pagination">
+{% if page.previous %}
+  <a class="pagination-item older" href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&laquo; Previous</a></li>
+{% else %}
+  <span class="pagination-item older">&larr; Previous</span>
+{% endif %}
+{% if page.next %}
+  <a class="pagination-item newer" href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next &raquo;</a>
+{% else %}
+  <span class="pagination-item newer">Next &rarr;</span>
+{% endif %}
+</div>
+<div class="post-sharing">
+ {% include JB/sharing %}
+</div>
+<div class="related">
+
+  <h3>Related Posts</h3>
+    <ul class="related-posts">
+      {% for post in site.related_posts limit:3 %}
+        <li>
+            <a href="{{ post.url }}">
+              {{ post.title }}
+              <small>{{ post.date | date_to_string }}</small>
+            </a>
+        </li>
+      {% endfor %}
+    </ul>
+</div>
+
+{% include JB/comments %}

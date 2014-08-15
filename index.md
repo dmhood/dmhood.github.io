@@ -11,3 +11,4 @@ title: Full-Stack Forum
     {% include post_detail.html %}
   {% endfor %}
 </div>
+{% include JB/commentsCount %}
