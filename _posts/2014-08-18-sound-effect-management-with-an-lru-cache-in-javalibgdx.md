@@ -2,7 +2,7 @@
 layout: post
 title: "Sound Effect Management with an LRU Cache in Java/LibGDX"
 description: ""
-category:
+category: Software
 tags: [software,game development]
 ---
 {% include JB/setup %}
@@ -76,16 +76,16 @@ Let's go through this line by line for a better understanding.
 
 Line 1-3: Imports.  The LRU cache is backed by Java’s linked hash map, which fortunately for us keeps track of our most recently accessed members.
 
-Line 18-20: An interface that allows us to create any type of custom notification function we can use when an item is removed.  Useful for knowing when to actually dispose of the sound asset (with LibGDX's "dispose" method).
+Line 18-20: Remove listener interface declaration.  An interface that allows us to create any type of custom notification function we can use when an item is removed.  Useful for knowing when to actually dispose of the sound asset (with LibGDX's "dispose" method).
 
-Line 29:  Our cache constructor.  First we construct our new LinkedHashMap specifying three arguments, the initial capacity, the load factor, and whether or not we rate objects by last accessed or last inserted.  Here, we can set the initial capacity to be maxEntries * 1.75.  This setting guarantees we will never have to perform an expensive re-hash while the game is running.  Remember, if the maximum number of entries divided by the load factor is less than the initial capacity, we will never have to rehash.  We don't just want a load factor of 1 because we likely don't have a perfect hash function and thus won't get optimal lookups.  Finally, we specify we with a boolean that we want access-ordering (remove the least recently accessed object) as opposed to insertion-ordering.
+Line 29:  Our cache constructor.  First we construct our new LinkedHashMap specifying three arguments: the initial capacity, the load factor, and whether or not we rate objects by last accessed or last inserted.  Here, we can set the initial capacity to be maxEntries * 1.75.  This setting guarantees we will never have to perform an expensive re-hash while the game is running.  Remember, if the maximum number of entries divided by the load factor is less than the initial capacity, we will never have to rehash.  We don't just want a load factor of 1 because we likely don't have a perfect hash function and thus won't get optimal lookups.  Finally, we specify with a boolean that we want access-ordering (remove the least recently accessed object) as opposed to insertion-ordering.
 
-Line 30-39:  From the <a href="http://docs.oracle.com/javase/7/docs/api/java/util/LinkedHashMap.html#removeEldestEntry">java docs</a> :
+Line 30-39:  Our entry removal method.  From the <a href="http://docs.oracle.com/javase/7/docs/api/java/util/LinkedHashMap.html#removeEldestEntry">java docs</a> :
 
 >The removeEldestEntry(Map.Entry) method may be overridden to impose a policy for removing stale mappings automatically when new mappings are added to the map.
 
-Here we override the method to remove the oldest (least recently used) entry if we have reached the cache’s max size.  This is where we enforce the max-size of the cache and ensure we will never re-hash.  We also trigger the notifyEntryRemoved event.
+Here we override the method to remove the oldest (least recently used) entry if we have reached the cache’s max size.  This is where we enforce the max size of the cache and ensure we will never re-hash.  We also trigger the notifyEntryRemoved event.
 
-Line 42+:  The rest of the code is just the basic get/set/retrieve operations and a setter for our remove listener.
+Line 42+:  Boilerplate.  The rest of the code is just the basic get/set/retrieve operations and a setter for our remove listener.
 
 Now whenever we load/play a sound, we add it/look it up in our cache.  The least-used sounds will be automatically removed from our cache for us (without us having to track what is accessed), and we can easily limit the amount of memory set aside to store sound effects.  Note this implementation isn't thread safe!
