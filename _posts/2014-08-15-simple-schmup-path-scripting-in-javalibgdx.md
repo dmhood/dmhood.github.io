@@ -3,7 +3,7 @@ layout: post
 title: "Simple Schmup Path Scripting in Java/LibGDX"
 description: ""
 category: Software
-tags: [software, game development]
+tags: [software,game development]
 ---
 There are many good resources on building your own schmup (shoot-em-up) for Android, iOS, etc., but I haven't seen too many code samples out there than can be used for basic AI scripts (at least for LibGDX).  For my game, I used a pretty standard entity hierarchy when describing all of my game objects.  In this post I will be focusing on the enemy ships and their scripts, but the logic can really be applied to any type game logic.  Note that all the examples were created on top of the great <a href="http://www.libgdx.com">LibGDX</a> engine.
 
