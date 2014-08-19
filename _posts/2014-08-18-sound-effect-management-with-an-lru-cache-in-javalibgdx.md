@@ -89,3 +89,5 @@ Here we override the method to remove the oldest (least recently used) entry if 
 Line 42+:  Boilerplate.  The rest of the code is just the basic get/set/retrieve operations and a setter for our remove listener.
 
 Now whenever we load/play a sound, we add it/look it up in our cache.  The least-used sounds will be automatically removed from our cache for us (without us having to track what is accessed), and we can easily limit the amount of memory set aside to store sound effects.  Note this implementation isn't thread safe!
+
+**Edit:  Note that you will still want to load all of the necessary sounds for your current screen on the initial load (to avoid stuttering when pulling in new assets).  The advantage of the cache over manual asset management are that (1) Sounds are disposed of automatically when the memory limit is reached and (2) If you have extra space, you can reduce load times between screens (particularly useful if you are switching/loading different screens frequently).
