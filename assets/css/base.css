@@ -1,10 +1,7 @@
 
-.imageBlock {
+.caption {
+  display: block;
   text-align: center;
-  margin-bottom: 10px;
-}
-
-.imageBlock .caption {
   font-size: 0.7rem;
 }
 

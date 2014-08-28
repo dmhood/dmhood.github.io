@@ -3,7 +3,7 @@ layout: post
 title: "Sound Effect Management with an LRU Cache in Java/LibGDX"
 description: ""
 category: Software
-tags: [software,game development]
+tags: [software,game development,java]
 ---
 {% include JB/setup %}
 A least-recently used cache is a particularly useful data structure for managing sound effects on most mobile games.  There are many examples that are easy to find through simple google-fu, but the example I used (<a href="http://stackoverflow.com/questions/224868/easy-simple-to-use-lru-cache-in-java">from StackOverflow</a>) has unfortunately lost its linked source (at least at the time of this writing).
