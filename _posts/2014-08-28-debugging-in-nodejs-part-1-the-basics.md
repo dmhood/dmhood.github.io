@@ -177,7 +177,7 @@ Quick Example:
 
 ![Node Inspector in all of its glory]({{site.url}}/assets/images/nodeInspector.png "Node Inspector in all of its glory")
 
-Hitting a breakpoint, we see our code we can modify in the center, the local scope and call stack on the right, and our app directly on the left.  We can also hover over variables to quickly see their values (and modify them by double clicking).
+Hitting a breakpoint, we see our code we can modify in the center, the local scope and call stack on the right, and our app directory on the left.  We can also hover over variables to quickly see their values (and modify them by double clicking).
 
 You can also start the debugger on a currently running app (if you don’t want to restart it for some reason; say it has gotten into a strange state you aren’t sure how to reproduce, or you are debugging a production app).  On my Mac it’s fairly simple:
 
