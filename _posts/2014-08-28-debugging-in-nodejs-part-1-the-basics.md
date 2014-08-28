@@ -15,15 +15,15 @@ These tools fall more into the “preventative care” category of debugging.  W
 JSHint is one of several "linters" that will warn you about potential errors or stylistic inconsistancies in your Javascript code.  JSHint will warn you about a variety of potential errors, such as:
 
 {% highlight javascript linenos=table %}
-function someFunction (foo, bar) { // 'bar' is defined but never used
-    condition (fooi) { //  'fooi' is undefined
+function someFunction (foo, bar) { //'bar' is defined but never used
+    condition (fooi) { //'fooi' is undefined
           case 'one' :
-              anotherFunction() //  will warn about the missing break
+              anotherFunction1() //will warn about the missing break
           case 'two' :
-              anotherAction();
+              anotherFunction2();
               break;
     }
-    return foo  //  will warn about a missing semicolon
+    return foo  //will warn about a missing semicolon
 }
 {% endhighlight%}
 
@@ -47,20 +47,23 @@ var myObject = {
     something : 'else'
   }
 
-/*Passes the arguments through util.inspect, which prints to stdout.  For example, below I use %s:%j to format my first argument as a string, and my second as a JSON'ed object*/
-console.log('%s:%j', 'myObject', myObject); //  myObject:{"foo":"bar","something":"else”}
+/*Passes the arguments through util.inspect, which prints to stdout.  
+For example, below I use %s:%j to format my first argument as a string,
+and my second as a JSON'ed object*/
+console.log('%s:%j', 'myObject', myObject); //myObject:{"foo":"bar","something":"else”}
 
 /*same as console.log, but printed to stderr */
-console.error('oh no', myObject); //  oh no { foo: 'bar', something: 'else' }
+console.error('oh no', myObject); //oh no { foo: 'bar', something: 'else' }
 
 /* Calls util.inspect() on the supplied object */
-console.dir(myObject); //  { foo: 'bar', something: 'else’ }
+console.dir(myObject); //{ foo: 'bar', something: 'else’ }
 
 /*Ends our timer with the given label */
-console.timeEnd('myTimerLabel'); //  myTimerLabel: 1ms
+console.timeEnd('myTimerLabel'); //myTimerLabel: 1ms
 
-/*simple assertion tests with label.  Prints nothing if true, otherwise throws an error and prints a stack trace */
-console.assert(myObject.foo === 'bar', 'test if myObject has property foo'); //  {no output}
+/*simple assertion tests with label.  Prints nothing if true, otherwise
+throws an error and prints a stack trace */
+console.assert(myObject.foo === 'bar', 'test if myObject has property foo'); //{no output}
 
 /*Prints a stack trace with the supplied label */
   console.trace('stack trace');  //Trace: stack trace ... {stack trace follows}
@@ -189,6 +192,12 @@ And on the terminal screen where the node process is running, we get:
     debugger listening on port 5858
 
 Now we can attach node inspector (with the command "node-inspector”) since we have just activated the v8 debugger that node-inspector plugs into.  Navigate to http://127.0.0.1:8080/debug?port=5858 and you are in!
+
+I know I said I wouldn't go into testing, but a feature I of Node Inspector I have to mention is the ability to use it on [Mocha tests](https://github.com/visionmedia/mocha).  Debugging unit tests after a big refactor can sometimes cause some tough issues, but Node Inspector allows us jump into each test and figure out why things aren't working the way they should.  To use Node Inspector with Mocha, just use the following command (once Mocha is installed):
+
+    node-debug _mocha {test dir}
+
+Note that we run it with "_mocha" and not just "mocha".  This switch is due to the fact that the regular mocha command is actually a tiny wrapper that executes "_mocha", so the debugger wouldn't be connected to the correct process.
 
 Node Inspector is by far my preferred tool as far as debuggers go.  It is a bit heavier and may not be the first thing you turn to when you run into a bug (and can take a while to start), but there aren’t many better options for getting a good picture of what is going on in your application.  It has a few other features I haven’t mentioned, so I encourage you to again [read the docs](https://github.com/node-inspector/node-inspector).
 
