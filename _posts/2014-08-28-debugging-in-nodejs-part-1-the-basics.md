@@ -193,7 +193,7 @@ And on the terminal screen where the node process is running, we get:
 
 Now we can attach node inspector (with the command "node-inspector”) since we have just activated the v8 debugger that node-inspector plugs into.  Navigate to http://127.0.0.1:8080/debug?port=5858 and you are in!
 
-I know I said I wouldn't go into testing, but a feature I of Node Inspector I have to mention is the ability to use it on [Mocha tests](https://github.com/visionmedia/mocha).  Debugging unit tests after a big refactor can sometimes cause some tough issues, but Node Inspector allows us jump into each test and figure out why things aren't working the way they should.  To use Node Inspector with Mocha, just use the following command (once Mocha is installed):
+I know I said I wouldn't go into testing, but a feature of Node Inspector I have to mention is the ability to use it on [Mocha tests](https://github.com/visionmedia/mocha).  Debugging unit tests after a big refactor can sometimes cause some tough issues, but Node Inspector allows us jump into each test and figure out why things aren't working the way they should.  To use Node Inspector with Mocha, just use the following command (once Mocha is installed):
 
     node-debug _mocha {test dir}
 
