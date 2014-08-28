@@ -7,7 +7,7 @@ tags: [software,web development, node.js]
 ---
 {% include JB/setup %}
 
-The state of debugging node.js apps has always been a bit unfortunate, and [continues to be a point of pain](https://medium.com/code-adventures/farewell-node-js-4ba9e7f3e52b) for many.  While there is plenty of room for improvement, many developers simply aren’t aware of the considerable array of tools available for them to use (obviously excluding the previously referenced individual).  I’m not sure how in depth to go, but I’ll start with some of the more basic tools and continue until I feel like I’m rambling.
+The state of debugging node.js apps has always been a bit unfortunate, and [continues to be a point of pain](https://medium.com/code-adventures/farewell-node-js-4ba9e7f3e52b) for many.  While there is plenty of room for improvement, there is also a [sizeable ecosystem](https://www.npmjs.org/browse/keyword/debug) of tools that developers have available.  In this post, I'll try to touch on everything that I have used or find interesting.  I’m not sure how in depth to go, but I’ll start with some of the more basic tools and continue until I feel like I’m rambling.  If I miss something you find essential, feel free to contact me and I can add it in!
 
 ### Starting Tools (JSHint, Nodemon, and Pre-commit Hooks)
 These tools fall more into the “preventative care” category of debugging.  While not mandatory by any means, they can save a ton of time in the long run.  
