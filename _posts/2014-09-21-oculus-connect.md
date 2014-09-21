@@ -19,7 +19,7 @@ I think there were thirteen demos or so lasting about 30 seconds to 1 minute eac
 
 - A tiny city made of what at first looked like a child’s toys.  I bent down for a closer look and could see small “people” dancing around, a fire truck putting out a fire, and several other moving pieces.  I enjoyed watching the tiny bustle of the city immensely and wanted to pick up/place a car or two.  
 
-- A huge T-rex walking down a large hallway and roaring at me.  The scale of the animal was incredibly, and I looked up at it with awe as it stepped over me and continued on its way.  
+- A huge T-rex walking down a large hallway and roaring at me.  The scale of the animal was incredible, and I looked up at it with awe as it stepped over me and continued on its way.  
 
 - A slow-motion, futuristic battle with a large robot on what I assume was Earth.  This was the “Showdown” demo talked about earlier in the conference ([video here](http://www.youtube.com/watch?v=3HA1VIWkYGs)) and was the grande finale of the whole demo real.  The demo places you in the middle of a group of futuristic soldiers shooting at a large robot, all in the middle of a typical city-setting.  As soon as the demo started I jumped out of the way of an oncoming bullet.  Later on, a car to my front exploded, sending it hurdling over me.  As it passed over I looked up to see a passenger twisting like a rag doll from the explosion.
 
