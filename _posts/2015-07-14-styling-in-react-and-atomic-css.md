@@ -2,7 +2,7 @@
 layout: post
 title: "Styling in React and Atomic CSS"
 description: ""
-category:
+category: Software
 tags: [software, react, javascript, css]
 ---
 {% include JB/setup %}
